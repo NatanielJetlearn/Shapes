@@ -1,0 +1,30 @@
+import pygame
+WIDTH = 600
+HEIGHT = 600
+outputscreen = pygame.display.set_mode((600,600))
+# 
+start,end = (0,300),(600,300)
+
+# for circle
+pos = (300,300)
+radius = 200
+
+rectangle = pygame.Rect(300,300,100,100)
+
+running = True
+while running:
+    # drawing line
+    pygame.draw.line(outputscreen,(0,255,255),start,end)
+
+    # drawing a circle
+    pygame.draw.circle(outputscreen,(0,255,0),pos,radius)
+
+    #drawing a rectangle
+    pygame.draw.rect(outputscreen,(255,0,0),rectangle)
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False 
+    pygame.display.update()
+
+pygame.quit()
